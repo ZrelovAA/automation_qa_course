@@ -1,13 +1,15 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromiumService
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.utils import ChromeType
+from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture(scope="function")
 def driver():
-	driver = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
+	options = Options()
+	options.add_argument("--no-sandbox")
+	driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), chrome_options=options)
 	driver.maximize_window()
 	yield driver
 	driver.quit()
