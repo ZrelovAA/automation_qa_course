@@ -52,3 +52,21 @@ class CheckBoxPage(BasePage):
 				count -= 1
 			else:
 				break
+
+	def get_checked_checkboxes(self):
+		checked_list = self.elements_are_present(self.locators.CHECKED_ITEMS)
+		data = []
+		for box in checked_list:
+			title_item = box.find_element("xpath", self.locators.TITLE_ITEM)
+			print(title_item.text)
+			data.append(title_item.text)
+		print(f'This is fined list - {data}')
+		return str(data).replace(' ', '').replace('doc', '').replace('.', '').lower()
+
+	def get_output_result(self):
+		result_list = self.elements_are_present(self.locators.OUTPUT_RESULT)
+		data = []
+		for item in result_list:
+			data.append(item.text)
+		print(f'This is result list - {data}')
+		return str(data).replace(' ', '').lower()
