@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 
 class TextBoxPageLocators:
 	# form fields
-
 	FULL_NAME = (By.CSS_SELECTOR, "input[id='userName']")
 	EMAIL = (By.CSS_SELECTOR, "input[id='userEmail']")
 	CURRENT_ADDRESS = (By.CSS_SELECTOR, "textarea[id='currentAddress']")
@@ -27,9 +26,7 @@ class CheckBoxPageLocators:
 
 
 class RadioButtonPageLocators:
-
 	# radio buttons and result span
-
 	RADIO_YES = (By.CSS_SELECTOR, "label[class^='custom-control'][for='yesRadio']")
 	RADIO_IMPRESSIVE = (By.CSS_SELECTOR, "label[class^='custom-control'][for='impressiveRadio']")
 	RADIO_NO = (By.CSS_SELECTOR, "label[class^='custom-control'][for='noRadio']")
@@ -37,9 +34,7 @@ class RadioButtonPageLocators:
 
 
 class WebTablesPageLocators:
-
 	# add form buttons and fields
-
 	ADD_BUTTON = (By.CSS_SELECTOR, "button[id='addNewRecordButton']")
 	FIRST_NAME = (By.CSS_SELECTOR, "input[id='firstName']")
 	LAST_NAME = (By.CSS_SELECTOR, "input[id='lastName']")
@@ -50,6 +45,7 @@ class WebTablesPageLocators:
 	SUBMIT = (By.CSS_SELECTOR, "button[id='submit']")
 
 	# table
-
 	FULL_PEOPLE_LIST = (By.CSS_SELECTOR, "div[class='rt-tr-group']")
-
+	SEARCH_INPUT = (By.CSS_SELECTOR, "input[id='searchBox']")
+	DELETE_BUTTON = (By.CSS_SELECTOR, "span[title='Delete']")
+	ROW_PARENT = ".//ancestor::div[@class='rt-tr-group']"
